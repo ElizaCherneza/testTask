@@ -1,78 +1,78 @@
 __________________________________
 ИНСТРУКЦИЯ ПО УСТАНОВКЕ ПРОЕКТА
 __________________________________
-
-
+<br>
+<br>
 Клонировать репозиторий 
 git clone https://github.com/ElizaCherneza/testTask
-
+<br>
 Открыть терминал и собрать контейнеры docker
 docker-compose up --build -d
-
+<br>
 docker должен запустить все образы
-
+<br>
 Зайти в контейнер приложения (все команды прописывать в нем)
 docker compose exec php-cli bash
-
+<br>
 Установить все зависимости
 composer install
-
+<br>
 Локальный адрес проекта (проверить, не выдает ли ошибок)
 http://localhost:8080/
 Локальный адрес базы проекта
 http://localhost:8081/
-
+<br>
 Создать в корне проекта .env и перенести в него содержимое .env.example
-
+<br>
 Прогнать миграции
 php artisan migrate
-
+<br>
 
 
 __________________________________
 ИСПОЛЬЗОВАНИЕ API
 __________________________________
-
+<br>
 
 Формат запроса и ответа JSON
 (Для работы с API, я лично использую Postman)
-
+<br>
 Значения полей "name", "surname", "phone", "email", "country" типа string
-
+<br>
 
 
 Создание записи:
-
+<br>
 POST запрос
 http://127.0.0.1:8080/api/create-guest
-
-Тело запроса в формате JSON
-{
-    "name": "Кент",
-    "surname": "Камрадов",
-    "phone": "88005553535",
-    "email": "goblin@mail.ru",
-    "country": "Россия"
-}
-
+<br>
+Тело запроса в формате JSON<br>
+{<br>
+    "name": "Кент",<br>
+    "surname": "Камрадов",<br>
+    "phone": "88005553535",<br>
+    "email": "goblin@mail.ru",<br>
+    "country": "Россия"<br>
+}<br>
+<br>
 Ответ запроса в формате JSON
 (если открыть Headers в ответе запроса, там указаны X-Debug-Time и X-Debug-Memory, они есть во всех запросах)
-
+<br>
 
 
 Обновления записи:
 
 PUT запрос
 http://127.0.0.1:8080/api/{id записи}
-
-{
-    "name": "Никонор",
-    "surname": "Камрадов",
-    "phone": "896782112415",
-    "email": "goblin@mail.ru",
-    "country": "Россия"
-}
-
+<br>
+{<br>
+    "name": "Никонор",<br>
+    "surname": "Камрадов",<br>
+    "phone": "896782112415",<br>
+    "email": "goblin@mail.ru",<br>
+    "country": "Россия"<br>
+}<br>
+<br>
 
 
 Удаление записи:
