@@ -1,3 +1,104 @@
+__________________________________
+ИНСТРУКЦИЯ ПО УСТАНОВКЕ ПРОЕКТА
+__________________________________
+
+
+Клонировать репозиторий 
+git clone https://github.com/ElizaCherneza/testTask
+
+Открыть терминал и собрать контейнеры docker
+docker-compose up --build -d
+
+docker должен запустить все образы
+
+Зайти в контейнер приложения (все команды прописывать в нем)
+docker compose exec php-cli bash
+
+Установить все зависимости
+composer install
+
+Локальный адрес проекта (проверить, не выдает ли ошибок)
+http://localhost:8080/
+Локальный адрес базы проекта
+http://localhost:8081/
+
+Создать в корне проекта .env и перенести в него содержимое .env.example
+
+Прогнать миграции
+php artisan migrate
+
+
+
+__________________________________
+ИСПОЛЬЗОВАНИЕ API
+__________________________________
+
+
+Формат запроса и ответа JSON
+(Для работы с API, я лично использую Postman)
+
+Значения полей "name", "surname", "phone", "email", "country" типа string
+
+
+
+Создание записи:
+
+POST запрос
+http://127.0.0.1:8080/api/create-guest
+
+Тело запроса в формате JSON
+{
+    "name": "Кент",
+    "surname": "Камрадов",
+    "phone": "88005553535",
+    "email": "goblin@mail.ru",
+    "country": "Россия"
+}
+
+Ответ запроса в формате JSON
+(если открыть Headers в ответе запроса, там указаны X-Debug-Time и X-Debug-Memory, они есть во всех запросах)
+
+
+
+Обновления записи:
+
+PUT запрос
+http://127.0.0.1:8080/api/{id записи}
+
+{
+    "name": "Никонор",
+    "surname": "Камрадов",
+    "phone": "896782112415",
+    "email": "goblin@mail.ru",
+    "country": "Россия"
+}
+
+
+
+Удаление записи:
+
+DELETE запрос
+http://127.0.0.1:8080/api/{id записи}
+
+
+
+Получение записи по ее id:
+
+GET запрос
+http://127.0.0.1:8080/api/{id записи}
+
+
+
+Получение списка всех записей:
+
+GET запрос
+http://127.0.0.1:8080/api/group
+
+
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
