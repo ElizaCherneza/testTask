@@ -7,8 +7,6 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 use libphonenumber\NumberParseException;
 use libphonenumber\PhoneNumberUtil;
-// use Giggsey\PhoneNumber\PhoneNumberUtil;
-// use Giggsey\PhoneNumber\NumberParseException;
 
 class GuestService
 {
