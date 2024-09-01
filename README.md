@@ -27,7 +27,7 @@ http://localhost:8081/
 Прогнать миграции<br>
 php artisan migrate
 <br>
-
+<br>
 
 __________________________________
 ИСПОЛЬЗОВАНИЕ API
@@ -68,7 +68,7 @@ http://127.0.0.1:8080/api/{id записи}
 {<br>
     "name": "Никонор",<br>
     "surname": "Камрадов",<br>
-    "phone": "896782112415",<br>
+    "phone": "88005553535",<br>
     "email": "goblin@mail.ru",<br>
     "country": "Россия"<br>
 }<br>
